@@ -1,0 +1,41 @@
+velitel setdammage 0
+vuzvelitele setdammage 0
+jedeme3=false
+dobyta2=true
+0 fademusic 1
+aP addscore 1000
+playmusic ["Track6",25]
+aP sidechat "Èluny znièeny pane!"
+"3" ObjStatus "DONE"
+~4.5
+general2 sidechat "Rozumím! Zatím se postarejte o tanky. Èekejte na další rozkazy"
+~60
+titleCut ["Úkol splnìn","BLACK OUT", 5]
+~5
+1 setfog 0
+enableRadio false
+[aP] join group special
+enableRadio true
+aP action ["eject", heli1]
+aP setidentity "special"
+aP exec "special.sqs"
+aP setpos getpos specialpoz
+aP setdammage 0
+[nahrpilot] join group velheli2
+nahrpilot moveindriver heli1
+titleCut [" Desátník John Abramowsky ","BLACK IN", 5]
+utok3=true
+velitel moveindriver vuzvelitele
+savegame
+general2 sidechat "Liška sedí u hnízda! Opakuji liška sedí u hnízda!"
+~4
+special sidechat "To je náš signál. Mùžeme vyrazit!"
+~3
+special2 sidechat "Hodnì štìstí! Kdo ho dostane má u mì beèku!"
+~4
+aP sidechat "To beru!"
+3 fademusic 0
+~3
+special sidechat "Abramowsky zavøete hubu a jdeme na to."
+utok3presun=true
+exit

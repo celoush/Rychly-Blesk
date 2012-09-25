@@ -1,0 +1,33 @@
+aP addscore -1000
+playmusic ["Track6",25]
+HQ sidechat "Sakra neprorazili jsme údolím!"
+"2" ObjStatus "FAILED"
+~4.5
+veltank2 sidechat "Rozumím, pokusíme se nìjak probít! Vyšlete leteckou jednotku!"
+~3
+titleCut ["Úkol nesplnìn","BLACK OUT", 5]
+~5
+aP action ["eject", abr1]
+aP setidentity "pilot"
+aP exec "pilot.sqs"
+aP moveindriver heli1
+jedeme3=true
+aP setdammage 0
+strheli1 assignasgunner heli1
+titleCut [" Kapitán Jack T. Robinson ","BLACK IN", 5]
+enableRadio false
+[aP,strheli1] join group velheli2
+enableRadio true
+utok3=true
+savegame
+~5
+5 fademusic 0
+velheli2 sidechat "Kapitáne teï je to na nás! Musíme jim pomoct. Poletíme nízko pøi zemi. Musíme znièit všechny lodì a zbytek tankové osádky v Saint Pierre!"
+~5
+aP sidechat "Rozumím majore. Bùh nám pomáhej!"
+~2
+heli2 setfuel 1
+~10
+velheli2 flyinheight 45
+heli2 flyinheight 45
+exit

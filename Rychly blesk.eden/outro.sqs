@@ -1,0 +1,135 @@
+0 fademusic 0
+playmusic ["7thLifeless",17]
+4 fademusic 1
+setviewdistance 2000
+
+vojak setidentity "vojak"
+vojak exec "aP.sqs"
+vojak setbehaviour "SAFE"
+vojak setmimic "Normal"
+
+tankista setidentity "tankista"
+tankista exec "tankista.sqs"
+tankista setbehaviour "SAFE"
+tankista setmimic "Normal"
+strelec moveingunner tank
+strelec dowatch cil1
+
+special setidentity "special"
+special exec "special.sqs"
+special setbehaviour "SAFE"
+special setmimic "Normal"
+special2 setbehaviour "SAFE"
+special2 exec "special.sqs"
+special3 setbehaviour "SAFE"
+
+pilot setidentity "pilot"
+pilot exec "pilot.sqs"
+pilot setbehaviour "SAFE"
+pilot setmimic "Normal"
+
+_CameraPos = getpos kamera1
+_cmx = _CameraPos select 0
+_cmy = _CameraPos select 1
+_cmz = _CameraPos select 2
+_cam camSetFov 0.4
+_cam = "camera" CamCreate [_cmx,_cmy,_cmz+2]
+_cam CamSetTarget more
+_cam CameraEffect ["Internal","Back"]
+
+_cam CamCommit 0
+titleCut [" úèinkovali ","BLACK IN",4]
+~4
+
+_CameraPos = getpos kamera2
+_cmx = _CameraPos select 0
+_cmy = _CameraPos select 1
+_cmz = _CameraPos select 2
+_cam camSetFov 0.3
+_cam CamSetPos [_cmx,_cmy,_cmz+1.5]
+_cam CamSetTarget vojak
+_cam CamCommit 0
+@CamCommitted _cam
+titletext [" Desátník Trevor Linden","PLAIN DOWN",1]
+~1
+vojak setmimic "Smile"
+~4.5
+
+tankista setdir 275
+_CameraPos = getpos kamera3
+_cmx = _CameraPos select 0
+_cmy = _CameraPos select 1
+_cmz = _CameraPos select 2
+_cam camSetFov 0.3
+_cam CamSetPos [_cmx,_cmy,_cmz+1.5]
+_cam CamSetTarget tankista
+_cam CamCommit 0
+titletext [" Seržant Jim Stewart ","PLAIN DOWN",1]
+@CamCommitted _cam
+~1
+strelec dowatch heli1
+tankista setmimic "Smile"
+~4.5
+
+_CameraPos = getpos kamera4
+_cmx = _CameraPos select 0
+_cmy = _CameraPos select 1
+_cmz = _CameraPos select 2
+_cam camSetFov 0.3
+_cam CamSetPos [_cmx,_cmy,_cmz+1.5]
+_cam CamSetTarget pilot
+_cam CamCommit 0
+titletext [" Kapitán Jack T. Robinson ","PLAIN DOWN",1]
+@CamCommitted _cam
+~1
+heli2 domove getpos kamera5
+heli2 flyinheight 75
+pilot setmimic "Smile"
+
+~4.5
+
+special2 switchmove "EffectStandSalute"
+special3 switchmove "EffectStandSalute"
+
+_CameraPos = getpos kamera5
+_cmx = _CameraPos select 0
+_cmy = _CameraPos select 1
+_cmz = _CameraPos select 2
+_cam camSetFov 0.3
+_cam CamSetPos [_cmx,_cmy,_cmz+1.5]
+_cam CamSetTarget special
+_cam CamCommit 0
+titletext [" Desátník John Abramowsky ","PLAIN DOWN",1]
+@CamCommitted _cam
+~1
+special setmimic "Smile"
+~4.5
+
+_CameraPos = getpos kamera6
+_cmx = _CameraPos select 0
+_cmy = _CameraPos select 1
+_cmz = _CameraPos select 2
+_cam camSetFov 0.3
+_cam CamSetPos [_cmx,_cmy,_cmz+1.5]
+_cam CamCommit 15
+@CamCommitted _cam
+
+let1 setPos [(getpos letp1 select 0), (getpos letp1 select 1), (getpos letp1 select 2) + 50]
+let1 setdir 30
+let2 setpos [(getpos letp2 select 0), (getpos letp2 select 1), (getpos letp2 select 2) + 45]
+let2 setdir 30
+let3 setpos [(getpos letp3 select 0), (getpos letp3 select 1), (getpos letp3 select 2) + 55]
+let3 setdir 30
+
+_i=1
+#loop
+_i = _i + 1
+skiptime 0.01
+~0.01
+?(_i < 300): goto "loop"
+
+titleCut [" Vyrobil Celoush 2002","BLACK OUT",3]
+6 fademusic 0
+~6.5
+konec=true
+exit

@@ -1,0 +1,36 @@
+@(not canfire t721)
+@(not canfire t722)
+@(not alive ridv1)
+@(not alive ridv2)
+@(not alive strv1)
+@(not alive strv2)
+@(not alive velv1)
+@(not alive velv2)
+0 fademusic 1
+aP addscore 1000
+playmusic ["Track6",25]
+HQ sidechat "Základna dobyta, opakuji základna dobyta."
+"1" ObjStatus "DONE"
+~3.5
+veltank2 sidechat "Rozumím, vyrážíme! Dobrá práce!"
+~3
+titleCut ["Úkol splnìn","BLACK OUT", 5]
+~5
+aP setidentity "tankista"
+aP exec "tankista.sqs"
+aP moveincommander abr1
+aP setdammage 0
+str moveingunner abr1
+rid moveindriver abr1 
+titleCut ["Seržant Jim Stewart","BLACK IN", 5]
+enableRadio false
+[aP,rid,str] join group veltank2
+enableRadio true
+utok2=true
+savegame
+~5
+5 fademusic 0
+veltank2 sidechat "Seržante Stewarte! Jdeme na vìc!"
+~3
+aP sidechat "Tady seržant Jim Stewart. Rozumím pane, jsem hned u vás!"
+exit

@@ -1,0 +1,39 @@
+velitel setdammage 0
+vuzvelitele setdammage 0
+jedeme3=false
+dobyta2=true
+0 fademusic 1
+aP addscore -1000
+playmusic ["Track6",25]
+aP sidechat "Byl jsem sestøelen pane!"
+"3" ObjStatus "FAILED"
+~4.5
+general2 sidechat "Rozumím!"
+~5
+titleCut ["Úkol nesplnìn","BLACK OUT", 5]
+~5
+1 setfog 0 
+aP setidentity "special"
+aP exec "special.sqs"
+aP setpos getpos specialpoz
+aP setdammage 0
+nahrpilot moveindriver heli1
+[nahrpilot] join group velheli2
+titleCut [" Desátník John Abramowsky ","BLACK IN", 5]
+enableRadio false
+[aP] join group special
+enableRadio true
+utok3=true
+savegame
+general2 sidechat "Liška nedosedla k hnízku! Opakuji liška nedosedla k hnízdu!"
+~4
+special sidechat "To je signál. Musíme vyrazit! Bude to peklo!"
+~3
+special2 sidechat "Hodnì štìstí! Kdo to pøeije má u mì pivo!"
+~4
+aP sidechat "A si ho všichni dáme spoleènì!"
+3 fademusic 0
+~3
+special sidechat "Abramowsky buïte radìji zticha a jdeme na to."
+utok3presun=true
+exit

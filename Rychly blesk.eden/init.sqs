@@ -1,0 +1,191 @@
+;INIT SOUBOR - INTRO
+aP setidentity "vojak"
+aP exec "aP.sqs"
+setviewdistance 700
+enableRadio false
+0 fademusic 0
+playmusic ["7thOverdose",47]
+5 fademusic 1
+
+_CameraPos = getpos kamera1
+_cmx = _CameraPos select 0
+_cmy = _CameraPos select 1
+_cmz = _CameraPos select 2
+_cam camSetFov 0.4
+_cam = "camera" CamCreate [_cmx,_cmy,_cmz+2]
+_cam CamSetTarget general2
+_cam CameraEffect ["Internal","Back"]
+
+_cam CamCommit 0
+titleCut ["","BLACK IN",4]
+~4
+
+_cam CamSetTarget general
+_cam CamCommit 2
+@CamCommitted _cam
+
+@generalnamiste
+@general2namiste
+general dowatch general2
+general2 dowatch general
+~1.5
+
+general2 switchmove "EffectStandSalute"
+~0.1
+general switchmove "EffectStandSalute"
+~1
+general switchmove "EffectStandSaluteEnd"
+general2 switchmove "EffectStandSaluteEnd"
+~0.5
+general2 playmove "EffectStandTalk"
+titletext ["Generále za pár minut zaène operace Rychlý blesk","PLAIN DOWN",1]
+~4
+general playmove "EffectStandTalk"
+titletext ["Dobrá, je vše pøipraveno?","PLAIN DOWN",1]
+~3
+titletext ["Samozøejmì pane. Podrobný plán vypadá takto:","PLAIN DOWN",1]
+~4
+
+_CameraPos = getpos kamera2
+_cmx = _CameraPos select 0
+_cmy = _CameraPos select 1
+_cmz = _CameraPos select 2
+_cam camSetFov 0.5
+_cam CamSetPos [_cmx,_cmy,_cmz+3]
+_cam CamSetTarget velpoz1
+_cam CamCommit 0
+@CamCommitted _cam
+titletext ["Nejdøíve první oddíl s pomocí tankové èety zaútoèí na...","PLAIN DOWN",1]
+~5
+_CameraPos = getpos kamera3
+_cmx = _CameraPos select 0
+_cmy = _CameraPos select 1
+_cmz = _CameraPos select 2
+_cam camSetFov 0.7
+_cam CamSetPos [_cmx,_cmy,_cmz+50]
+_cam CamSetTarget t801
+_cam CamCommit 5
+titletext [" ... na nepøátelskou základnu a znièí tanky, co se zde nacházejí!","PLAIN DOWN",1]
+@CamCommitted _cam
+~4
+
+_CameraPos = getpos kamera4
+_cmx = _CameraPos select 0
+_cmy = _CameraPos select 1
+_cmz = _CameraPos select 2
+_cam camSetFov 0.7
+_cam CamSetPos [_cmx,_cmy,_cmz+50]
+_cam CamSetTarget veltank2
+_cam CamCommit 0
+@CamCommitted _cam
+_cam camSetFov 0.4
+_cam CamCommit 3
+
+titletext [" Až ji dobyjí, vyrazí druhá tanková èeta a ....","PLAIN DOWN",3]
+~4
+
+_CameraPos = getpos kamera5_1
+_cmx = _CameraPos select 0
+_cmy = _CameraPos select 1
+_cmz = _CameraPos select 2
+_cam camSetFov 0.8
+_cam CamSetPos [_cmx,_cmy,_cmz+50]
+_cam CamSetTarget t80a1
+_cam CamCommit 10
+@CamCommitted _cam
+
+_CameraPos = getpos kamera5
+_cmx = _CameraPos select 0
+_cmy = _CameraPos select 1
+_cmz = _CameraPos select 2
+_cam camSetFov 0.7
+_cam CamSetPos [_cmx,_cmy,_cmz+50]
+_cam CamCommit 10
+titletext [" ... a vyèistí nepøátelskou oblast!","PLAIN DOWN",1]
+@CamCommitted _cam
+~3
+
+
+titleCut ["","BLACK OUT",1.5]
+~1.5
+
+_CameraPos = getpos heli1
+_cmx = _CameraPos select 0
+_cmy = _CameraPos select 1
+_cmz = _CameraPos select 2
+_cam CamSetTarget heli1
+_cam camSetFov 0.4
+_cam CamSetPos [_cmx+30,_cmy+25,_cmz+2]
+_cam CamCommit 0
+titleCut ["","BLACK IN",1.5]
+~1.5
+titletext ["Pak vzlétnou dvì naše bojové helikoptéry a ...","PLAIN DOWN",2]
+~1
+_cam CamSetTarget heli2
+_cam CamCommit 3
+@CamCommitted _cam
+~1
+
+_CameraPos = getpos kamera6
+_cmx = _CameraPos select 0
+_cmy = _CameraPos select 1
+_cmz = _CameraPos select 2
+_cam CamSetTarget clun3
+_cam camSetFov 0.6
+_cam CamSetPos [_cmx,_cmy,_cmz+70]
+_cam CamCommit 0
+@CamCommitted _cam
+titletext["... a znièí èluny v zátoce u Saint Pierre.","PLAIN DOWN",2]
+~5
+
+
+_CameraPos = getpos kamera7
+_cmx = _CameraPos select 0
+_cmy = _CameraPos select 1
+_cmz = _CameraPos select 2
+_cam CamSetTarget special
+_cam camSetFov 0.4
+_cam CamSetPos [_cmx,_cmy,_cmz+3]
+_cam CamCommit 0
+@CamCommitted _cam
+titletext[" Nakonec vtrhne likvidaèní jednotka na ... ","PLAIN DOWN",2]
+~5
+
+_cam CamSetPos [_cmx,_cmy,_cmz+30]
+_cam CamSetTarget hrad
+_cam CamCommit 4
+titletext[" ... na hrad a pokusí se znièit velitele Saint Pierre, který se sem jistì pøesune.","PLAIN DOWN",2]
+@CamCommitted _cam
+~4
+
+_CameraPos = getpos kamera1
+_cmx = _CameraPos select 0
+_cmy = _CameraPos select 1
+_cmz = _CameraPos select 2
+_cam CamSetTarget general
+_cam camSetFov 0.7
+_cam CamSetPos [_cmx,_cmy,_cmz+2]
+_cam CamCommit 0
+
+titletext[" Tedy pokud ho do té doby nezabijeme pøi útoku na Saint Pierre!","PLAIN DOWN",1]
+~4
+titletext[" Výbornì generále! Dejte povel k útoku","PLAIN DOWN",1]
+~3
+
+titleCut ["","BLACK OUT", 1]
+~1
+CutRSC ["Default","Plain Down",100]
+_cam CameraEffect ["Terminate","Back"]
+CamDestroy _cam
+;INIT SOUBOR - KONEC INTRA
+titletext["","PLAIN DOWN",1]
+
+titleCut ["Desátník Trevor Linden","BLACK IN", 5]
+;playmusic ["Track5",27]
+enableRadio true
+~1
+general2 sidechat "Pánové, operace Rychlý blesk zaèíná. Hodnì štìstí!"
+~3
+savegame
+zacatek=true
+exit

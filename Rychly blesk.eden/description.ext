@@ -1,0 +1,41 @@
+onLoadMission="Operace Rychlý blesk"
+OnLoadIntro="V této misi"
+MinScore = 0
+AvgScore = 10000
+MaxScore = 20000
+class CfgIdentities
+{
+	class vojak
+	{
+		name = "Des. Trevor Linden";
+		face = "Face24";
+		glasses="None";
+		speaker = "Peter";
+		pitch = 1.10;
+	};
+	class tankista
+	{
+		name = "Sgt. Jim Stewart";
+		face = "Face24";
+		glasses="None";
+		speaker = "Adam";
+		pitch = 1.10;
+	};
+	class pilot
+	{
+		name = "Kpt. Jack T. Robinson";
+		face = "Face10";
+		glasses="None";
+		speaker = "Marc";
+		pitch = 1.05;
+	};
+	class special
+	{
+		name = "Des. John Abramowsky";
+		face = "Face10";
+		glasses="spectacles";
+		speaker = "Marc";
+		pitch = 0.85;
+	};
+	
+};

@@ -1,0 +1,6 @@
+5 fademusic 0
+veltank1 sidechat "Už jsme skoro tam, zahajte útok!"
+~1.5
+utok1=true
+velpoz1 sidechat "Rozumím, jdeme na vìc!"
+exit
